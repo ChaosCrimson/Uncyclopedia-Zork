@@ -51,7 +51,7 @@ public class Game {
         titleNamePanel = new JPanel();
         titleNamePanel.setBounds(100, 100, 1200, 150);
         titleNamePanel.setBackground(Color.black);
-        titleNameLabel = new JLabel("ADVENTURE");
+        titleNameLabel = new JLabel("ZORK");
         titleNameLabel.setForeground(Color.white);
         titleNameLabel.setFont(titleFont);
 
@@ -528,86 +528,82 @@ public class Game {
 
             String yourChoice = event.getActionCommand();
 
-            switch(position){
-                case "nondescriptRoom":
-                    switch(yourChoice){
-                        case "c1": kitchen();break;
-                        case "c2": foyer();break;
-                        case "c3": houseEast();break;
+            switch (position) {
+                case "nondescriptRoom" -> {
+                    switch (yourChoice) {
+                        case "c1" -> kitchen();
+                        case "c2" -> foyer();
+                        case "c3" -> houseEast();
                     }
-                    break;
-                case "kitchen":
-                    switch(yourChoice){
-                        case "c1": nondescriptRoom(); break;
+                }
+                case "kitchen" -> {
+                    switch (yourChoice) {
+                        case "c1" -> nondescriptRoom();
                     }
-                    break;
-                case "foyer":
-                    switch(yourChoice){
-                        case "c1": nondescriptRoom(); break;
+                }
+                case "foyer" -> {
+                    switch (yourChoice) {
+                        case "c1" -> nondescriptRoom();
                     }
-                    break;
-                case "houseEast":
-                    switch(yourChoice){
-                        case "c1": north(); break;
-                        case "c2": east();break;
-                        case "c3": nondescriptRoom(); break;
-                        case "c4": west();break;
+                }
+                case "houseEast" -> {
+                    switch (yourChoice) {
+                        case "c1" -> north();
+                        case "c2" -> east();
+                        case "c3" -> nondescriptRoom();
+                        case "c4" -> west();
                     }
-                    break;
-                case "north":
-                    switch(yourChoice){
-                        case "c1": houseEast(); break;
+                }
+                case "north" -> {
+                    switch (yourChoice) {
+                        case "c1" -> houseEast();
                     }
-                    break;
-                case "east":
-                    switch(yourChoice){
-                        case "c1": houseEast(); break;
+                }
+                case "east" -> {
+                    switch (yourChoice) {
+                        case "c1" -> houseEast();
                     }
-                    break;
-                case "west":
-                    switch(yourChoice){
-                        case "c1": fight(); break;
-                        case "c2": houseEast(); break;
+                }
+                case "west" -> {
+                    switch (yourChoice) {
+                        case "c1" -> fight();
+                        case "c2" -> houseEast();
                     }
-                    break;
-                case "fight":
-                    switch(yourChoice){
-                        case "c1": playerAttack();break;
-                        case "c2": houseEast(); break;
+                }
+                case "fight" -> {
+                    switch (yourChoice) {
+                        case "c1" -> playerAttack();
+                        case "c2" -> houseEast();
                     }
-                    break;
-                case "playerAttack":
-                    switch(yourChoice){
-                        case "c1":
-                            if(monsterHP <1 ){
+                }
+                case "playerAttack" -> {
+                    switch (yourChoice) {
+                        case "c1" -> {
+                            if (monsterHP < 1) {
                                 win();
-                            }
-                            else{
+                            } else {
                                 monsterAttack();
                             }
-                            break;
+                        }
                     }
-                    break;
-                case "monsterAttack":
-                    switch(yourChoice){
-                        case "c1":
-                            if(playerHP <1 ){
+                }
+                case "monsterAttack" -> {
+                    switch (yourChoice) {
+                        case "c1" -> {
+                            if (playerHP < 1) {
                                 lose();
-                            }
-                            else{
+                            } else {
                                 fight();
                             }
-                            break;
+                        }
                     }
-                    break;
-                case "win":
-                    switch(yourChoice){
-                        case "c1": houseEast();
+                }
+                case "win" -> {
+                    switch (yourChoice) {
+                        case "c1" -> houseEast();
                     }
-                    break;
-
+                }
             }
-
 
         }
     }
